@@ -1,1 +1,6 @@
-Main Repository
+What happen in UijeongBu !
+
+# Server Repository
+
+# Todo
+> Function
