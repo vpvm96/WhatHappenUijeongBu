@@ -1,4 +1,9 @@
+import React from 'react';
+
+import { Link, Route, Switch } from 'react-router-dom';
+
 import './app.css';
+
 
 function App() {
   return (
