@@ -4,14 +4,10 @@ const value = []
 
 const reducer = (state = value, action) => {
   if ( action.type === '') {
-    
-    return setState
-
+    // return setState;
   } else {
-
-    return state
+    return state;
   }
-  
 };
 
 const alert = true;
