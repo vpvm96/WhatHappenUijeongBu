@@ -1,6 +1,4 @@
-
-   
-  .body {
+.body {
     /* margin: 0; */
     height: 100vh;
     box-sizing: border-box;
@@ -10,7 +8,7 @@
   }
    
   .maintitle {
-    padding-top:5%;
+    padding-top:10%;
     font-size: 50px;
     font-family: fantasy;
     text-align: center;
@@ -21,10 +19,11 @@
       background-color: #EEEFF1;
       margin-right: auto;
       margin-left: auto;
-      margin-top: 5%;
+      margin-top: 10%;
       padding: 20px;
       text-align: center;
       border: none;
+      border-radius: 5px;
       
   }
    
@@ -34,6 +33,7 @@
         border: none;
         width: 260px;
         margin-bottom: 10px;
+        border-radius: 5px;
    
   }
    
@@ -45,6 +45,7 @@
     background-color: #1BBC9B;
     margin-bottom: 30px;
     color: white;
+    border-radius: 5px;
   }
    
   .links {
