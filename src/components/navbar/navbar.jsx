@@ -5,9 +5,10 @@ import { FcAdvertising, FcNeutralDecision, FcMenu } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
 
-  // const handleClick = () => setClick(!click);
+  const [toggle, setToggle] = useState(false)
+
+   // const handleClick = () => setClick(!click);
   // const closeMobileMenu = () => setClick(false);
 
   // const onLogout = () => {
@@ -18,10 +19,10 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_logo}>
-        <a>FLEX</a>
+        <a><Link to="/#">FLEX</Link></a>
       </div>
 
-      <ul className={styles.navbar_menu}>
+      <ul className={styles.navbar_menu}> 
         <li><Link to="/issue">사건사고</Link></li>
         <li><Link to="/free">자유게시판</Link></li>
         <li><Link to="/question">문의게시판</Link></li>
