@@ -1,2 +1,15 @@
-.container {
+.board_list {
+  text-align: center;
+  width: 75%;
+  margin: 30px auto;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+}
+.col, th, td {
+  border-bottom: 1px solid #444444;
+  padding: 7px;
+}
+
+.board_list thead {
+  background-color :rgb(233,236,239);
 }
