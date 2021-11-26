@@ -4,12 +4,12 @@
     height: 100vh;
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: skyblue;
+    background-color: #fff;
     /* border-radius: 5px */
   }
    
   .maintitle {
-    padding-top:10%;
+    padding-top:6%;
     font-size: 50px;
     font-family: fantasy;
     text-align: center;
@@ -20,7 +20,7 @@
       background-color: #EEEFF1;
       margin-right: auto;
       margin-left: auto;
-      margin-top: 10%;
+      margin-top: 8%;
       padding: 20px;
       text-align: center;
       border: none;

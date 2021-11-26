@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './free.module.css'
 
+<<<<<<< HEAD
 // const Free = () => {
 //   return (
 //     <footer className={styles.footer}>
@@ -117,6 +118,14 @@ const free = () => {
             </div>
         </div>
     );
+=======
+const Free = () => {
+  return (
+    <div className={styles.container}>
+  
+    </div>
+  )
+>>>>>>> 62b7b2b0d12dcbce0d2c585ccd3c2b5ea31c6175
 }
 
 export default free;

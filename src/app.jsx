@@ -8,6 +8,7 @@ import Login from './components/login/login';
 import Issue from './components/navbar/issue';
 import Question from './components/navbar/question';
 import Free from './components/navbar/free';
+import Main from './components/main/main';
 
 
 function App() {
@@ -21,10 +22,13 @@ function App() {
             <Route exact path='/issue' component={Issue} />
             <Route exact path='/question' component={Question} />
             <Route exact path='/free' component={Free} />
+            <Main/>
+            <Board/>
             <Footer/>
-      </>
-      {/* <Board/> */}
-       </Switch>
+            
+          </>
+        
+        </Switch>
       </Router>
     </div>  
   );
