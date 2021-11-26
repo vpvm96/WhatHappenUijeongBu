@@ -25,10 +25,10 @@ const Board = () => {
               <th>조회수</th>
               <th>첨부</th>
             </tr>
-          </thead>
+          </thead>  
           <tbody>
             <tr>
-              <td>a</td>
+              <td>1</td>
               <td>s</td>
               <td>d</td>
               <td>f</td>
