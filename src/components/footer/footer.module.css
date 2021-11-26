@@ -1,22 +1,31 @@
-.footer {
-  height: 100px;
-  margin-top: auto;
-  background-color: #263343;
+.footerContainer {
+  width: 100%;
+  margin-top: 2%;
+  align-items: center;
+  justify-content: center;
+  background-color: skyblue;
 }
 
-.contents {
-  width: 96%;
-  max-width: 1100px;
-  height: 100%;
+/* .footerContainer:hover {
+  cursor: pointer;
+} */
+
+.footerRow {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
 }
 
-.title {
-  font-weight: 100;
-  font-size: 20px;
-  font-family: fantasy;
-  color: white;
+.footerCol {
+  color : black;
+  padding: 1rem 8rem 3rem 8rem;
+  box-sizing : border-box;
+  text-align: left;
+}
+
+.content {
+  color: black;
+  font-style: noraml;
+  font-size: 0.8em;
 }

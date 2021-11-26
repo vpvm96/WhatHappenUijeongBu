@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_logo}>
-        <a><Link to="/#">FLEX</Link></a>
+        <a><Link to="/#">WHU</Link></a>
       </div>
 
       <ul className={styles.navbar_menu}> 
