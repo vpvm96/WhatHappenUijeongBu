@@ -27,19 +27,6 @@ export const User = sequelize.define(
       type: DataTypes.STRING(128),
       allowNull: false,
     },
-    url: DataTypes.TEXT,
   },
   { timestamps: false }
 );
-
-export async function findByUsername(username) {
-  return User.findOne({ where: {username} })
-}
-
-export async function findById(id) {
-  return User.findByPk(id)
-}
-
-export async function createUser(user) {
-  return User.create(user).then((data) => data.dataValues.id)
-}

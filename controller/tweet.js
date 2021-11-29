@@ -1,4 +1,4 @@
-import * as tweetRepository from '../data/tweet.js';
+import * as tweetRepository from '../model/tweet.js';
 import { getSocketIO } from '../connection/socket.js';
 
 export async function getTweets(req, res) {
