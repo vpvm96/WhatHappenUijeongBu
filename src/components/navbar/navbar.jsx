@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import styles from './navbar.module.css'
 import { FcAdvertising, FcNeutralDecision, FcMenu } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
-const Navbar = () => {
-
+const Navbar = memo(({ username, onLogout, onAllSns, onMySns }) => {
   const [toggle, setToggle] = useState(false)
 
    // const handleClick = () => setClick(!click);
@@ -38,6 +38,6 @@ const Navbar = () => {
       </a>
     </nav>
   )
-}
+});
 
 export default Navbar

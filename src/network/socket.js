@@ -4,7 +4,7 @@ export default class Socket {
     constructor(baseURL, getAccessToken) {
         this.io = socket(baseURL, {
             auth: (cb) => cb({ token: getAccessToken() }), // 쌉중요
-            auth: (cb) => cb({ token: localStorage.getItem('token') }),
+            // auth: (cb) => cb({ token: localStorage.getItem('token') }),
         });
 
         this.io.on('connect_error', (err) => {

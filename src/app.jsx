@@ -1,35 +1,57 @@
 import React from 'react';
 import './app.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Board from './components/board/board';
+import { BrowserRouter as Route, Switch, useHistory } from 'react-router-dom';
+// import Board from './components/board/board';
 import Navbar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
-import Login from './components/login/login';
-import Issue from './components/navbar/issue';
-import Question from './components/navbar/question';
-import Free from './components/navbar/free';
-import Main from './components/main/main';
+import AllSns from './components/sns/allSns';
+import MySns from './components/sns/mySns';
+// import Footer from './components/footer/footer';
+// import Login from './components/login/login';
+// import Issue from './components/navbar/issue';
+// import Question from './components/navbar/question';
+// import Free from './components/navbar/free';
+// import Main from './components/main/main';
+import { useAuth } from './context/authContext';
 
+function App({ snsService }) {
+  const history = useHistory();
+  const { user, logout } = useAuth();
 
-function App() {
+  const onAllSns = () => {
+    history.push('/');
+  };
+
+  const onMySns = () => {
+    history.push(`/${user.username}`);
+  };
+
+  const onLogout = () => {
+    if (window.confirm('Do you want to log out?')) {
+      logout();
+      history.push('/');
+    }
+  };
+
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Login} />
+      <Navbar
+        username={user.username}
+        onLogout={onLogout}
+        onAllSns={onAllSns}
+        onMySns={onMySns}
+      />
+      <Switch>
+        (
           <>
-            <Navbar/>
-            <Route exact path='/issue' component={Issue} />
-            <Route exact path='/question' component={Question} />
-            <Route exact path='/free' component={Free} />
-            <Main/>
-            <Board/>
-            <Footer/>
-            
+            <Route exact path='/'>
+              <AllSns snsService={snsService} />
+            </Route>
+            <Route exact path='/:username'>
+              <MySns snsService={snsService} />
+            </Route>
           </>
-        
-        </Switch>
-      </Router>
+        )
+      </Switch>
     </div>  
   );
 }
