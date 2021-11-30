@@ -3,7 +3,7 @@ import 'express-async-errors';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
-import tweetsRouter from './router/tweets.js';
+import snsRouter from './router/ujbSnsRouter.js';
 import userRouter from './router/userRouter.js';
 import { config } from './config.js';
 import { initSocket } from './connection/socket.js';
@@ -16,7 +16,7 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan('tiny'));
 
-app.use('/sns', tweetsRouter);
+app.use('/sns', snsRouter);
 app.use('/user', userRouter);
 
 app.use((req, res, next) => {
