@@ -7,6 +7,7 @@ import snsRouter from './router/ujbSnsRouter.js';
 import userRouter from './router/userRouter.js';
 import freeBoardRouter from './router/freeBoardRouter.js';
 import qnaBoardRouter from './router/qnaBoardRouter.js';
+import issueBoardRouter from './router/issueBoardRouter.js';
 import { config } from './config.js';
 import { initSocket } from './connection/socket.js';
 import { sequelize } from './db/database.js';
@@ -22,6 +23,7 @@ app.use('/sns', snsRouter);
 app.use('/user', userRouter);
 app.use('/free', freeBoardRouter);
 app.use('/qna', qnaBoardRouter);
+app.use('/issue', issueBoardRouter);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
