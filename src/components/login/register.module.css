@@ -1,0 +1,53 @@
+.box_id {
+  padding-right: 110px;
+}
+
+.wrapper {
+  position: relative;
+  height: 500px;
+}
+
+.clear {
+  clear: both;
+}
+
+.content {
+  width: 450px;
+  /* login을 감싸는 것 */
+  /* border: 1px solid black; */
+  position: relative;
+  background: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px 20px 20px 20px;
+  /* 개체를 가운데 정렬하기 위한 변환 */
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.btn {
+  margin: 30px 0 91px;
+}
+
+.btnJoin {
+  width: 100%;
+  padding: 21px 0 17px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: marketTeamLightOrange;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 18px;
+  font-family: Dotum, '돋움', Helvetica, sans-serif;
+}
+
+.intro {
+  width: 244px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-left: 2%;
+}
