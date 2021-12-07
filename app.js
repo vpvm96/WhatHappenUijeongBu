@@ -13,10 +13,15 @@ import { initSocket } from './connection/socket.js';
 import { sequelize } from './db/database.js';
 
 const app = express();
+const corsOptions = {
+  // origin: config.host.client,
+  origin: "http://localhost:3000",
+  credentials: true,
+}
 
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(morgan('tiny'));
 
 app.use('/sns', snsRouter);

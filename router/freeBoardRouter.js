@@ -15,7 +15,7 @@ const validateFreeBoard = [
   validate,
 ];
 
-router.get('/', isAuth, freeBoardController.getFreeBoards);
+router.get('/', freeBoardController.getFreeBoards);
 router.get('/:id', isAuth, freeBoardController.getFreeBoard);
 
 router.post('/create', isAuth, validateFreeBoard, freeBoardController.createFreeBoard);
