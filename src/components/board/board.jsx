@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './board.module.css';
-import axios from "axios";
 
-const Board = () => {
+const Board = ({ boardService }) => {
+  const [items, setItems] = useState([]);
+  // useEffect(() => {
+  //   boardService.getBoards().then(item => setItems(item.data));
+  // }, []);
+  const onClickHandler = () => {
+    boardService.getBoards().then(item => setItems(item.data));
+    console.log(items);
+  }
   return (
     <div className={styles.container}>
       <div style={{padding: "0 12px"}}>
@@ -19,7 +26,6 @@ const Board = () => {
           <thead>
             <tr>
               <th>번호</th>
-              <th>구분</th>
               <th>제목</th>
               <th>작성자</th>
               <th>작성일시</th>
@@ -29,10 +35,10 @@ const Board = () => {
           </thead>  
           <tbody>
             <tr>
-              <td>1</td>
-              <td>s</td>
-              <td>d</td>
-              <td>f</td>
+              <td>{items[0].id}</td>
+              <td>{items[0].title}</td>
+              <td>Test</td>
+              <td>{items[0].createdAt}</td>
               <td>g</td>
               <td>h</td>
               <td>h</td>
@@ -40,8 +46,9 @@ const Board = () => {
           </tbody>
         </table>
       </div>
+      <button onClick={onClickHandler}>데이터 확인</button>
     </div>
   )
 }
 
-export default Board
+export default Board;

@@ -11,6 +11,7 @@ export default class HttpClient {
         const axiosAgent = axios.create({
             baseURL : this.base,
         });
+        axiosAgent.defaults.timeout = 2500;
 
         return axiosAgent;
     }

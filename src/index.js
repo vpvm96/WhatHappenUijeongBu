@@ -11,6 +11,7 @@ import TokenStorage from './tokenStorage/tokenStorage';
 import AuthService from './service/authService';
 import Socket from './network/socket';
 import HttpClientFetch from './network/httpClientFetch';
+import BoardService from './service/boardService';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const tokenStorage = new TokenStorage();
@@ -20,6 +21,7 @@ const authErrorEventBus = new AuthErrorEventBus();
 const authService = new AuthService(httpClientFetch, tokenStorage);
 const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
 const snsService = new SnsService(httpClientFetch, tokenStorage, socketClient);
+const boardService = new BoardService(httpClient, baseURL, () => tokenStorage.getToken());
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,7 +30,7 @@ ReactDOM.render(
         authService={authService}
         authErrorEventBus={authErrorEventBus}
       >
-        <App snsService={snsService} />
+        <App snsService={snsService} boardService={boardService} />
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,

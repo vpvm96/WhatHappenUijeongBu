@@ -23,7 +23,7 @@ const Navbar = memo(({ username, onLogout, onAllSns, onMySns }) => {
       <ul className={styles.navbar_menu}> 
         <li onClick={onClickHandler}><Link to='/'>소셜 네트워크 서비스</Link></li>
         <li><Link to="/issue">사건사고</Link></li>
-        <li><Link to="/free">자유게시판</Link></li>
+        <li><Link to="/board">자유게시판</Link></li>
         <li><Link to="/question">문의게시판</Link></li>
       </ul>
 
