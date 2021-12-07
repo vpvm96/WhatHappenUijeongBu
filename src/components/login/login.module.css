@@ -49,6 +49,10 @@
     border-radius: 5px;
   }
    
+  .check {
+    margin: 8px;
+  }
+
   .links {
       text-align: center;
   }

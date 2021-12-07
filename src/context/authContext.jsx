@@ -32,9 +32,9 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
   }, [authService]);
 
   const signUp = useCallback(
-    async (username, password, name, email, url) =>
+    async (username, password, name, email) =>
       authService
-        .signup(username, password, name, email, url)
+        .signup(username, password, name, email)
         .then((user) => setUser(user)),
     [authService]
   );

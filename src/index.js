@@ -12,12 +12,14 @@ import HttpClient from './network/httpClient';
 import TokenStorage from './tokenStorage/tokenStorage';
 import AuthService from './service/authService';
 import Socket from './network/socket';
+import HttpClientFetch from './network/httpClientFetch';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const tokenStorage = new TokenStorage();
 const httpClient = new HttpClient(baseURL);
+const httpClientFetch = new HttpClientFetch(baseURL);
 const authErrorEventBus = new AuthErrorEventBus();
-const authService = new AuthService(httpClient, tokenStorage);
+const authService = new AuthService(httpClientFetch, tokenStorage);
 const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
 const snsService = new SnsService(httpClient, tokenStorage, socketClient);
 

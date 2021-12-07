@@ -5,7 +5,7 @@ import AuthService from "../../service/authService";
 import HttpClientFetch from './../../network/httpClientFetch';
 import TokenStorage from '../../tokenStorage/tokenStorage';
 
-function Resister() {
+function Register() {
   const base = "http://localhost:8080";
   const httpClientFetch = new HttpClientFetch(base);
   const tokenStorage = new TokenStorage();
@@ -142,4 +142,4 @@ function Resister() {
 };
 }
 
-export default Resister;
+export default Register;
