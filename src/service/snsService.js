@@ -17,7 +17,7 @@ export default class SnsService {
       return this.http.fetch(`/sns`, {
         method: 'POST',
         headers: this.getHeaders(),
-        body: JSON.stringify({ text, username: 'aaa', name: 'AAA' }),
+        body: JSON.stringify({ text, username: 'foxmon', name: 'foxmon' }),
       });
     }
   
@@ -28,7 +28,7 @@ export default class SnsService {
       });
     }
   
-    async updateSms(snsId, text) { // no use
+    async updateSns(snsId, text) { // no use
       return this.http.fetch(`/sns/${snsId}`, {
         method: 'PUT',
         headers: this.getHeaders(),
@@ -37,8 +37,8 @@ export default class SnsService {
     }
   
     getHeaders() { // for auth
-      // const token = this.tokenStorage.getToken();
-      const token = localStorage.getItem('token');
+      const token = this.tokenStorage.getToken();
+      // const token = localStorage.getItem('token');
       return {
         Authorization: `Bearer ${token}`,
       };

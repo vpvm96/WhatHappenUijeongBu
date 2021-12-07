@@ -5,6 +5,6 @@ export default class TokenStorage {
         localStorage.setItem(TOKEN, token);
     }
 
-    async getToken() { return localStorage.getItem(TOKEN); }
+    getToken() { return localStorage.getItem(TOKEN); }
     clearToken() { localStorage.clear(TOKEN); }
 }

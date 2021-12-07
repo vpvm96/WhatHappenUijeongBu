@@ -1,9 +1,12 @@
 import React from 'react'
+import { useParams } from 'react-router';
 import styles from './mySns.module.css';
+import Sns from './sns';
 
 const MySns = ({ snsService }) => {
+  const { username } = useParams();
   return (
-    <h1>MySns</h1>
+    <Sns snsService={snsService} username={username} addable={false} />
   )
 }
 

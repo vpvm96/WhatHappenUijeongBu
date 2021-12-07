@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './allSns.module.css'
+import React from 'react';
+import Sns from './sns';
 
 const AllSns = ({ snsService }) => {
   return (
-    <h1>AllSns</h1>
+    <Sns snsService={snsService} addable={true} />
   )
 }
 

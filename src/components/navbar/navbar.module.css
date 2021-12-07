@@ -80,6 +80,14 @@ i {
   font-size: 25px;
 }
 
+.logout {
+  color: #fff;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction:column;

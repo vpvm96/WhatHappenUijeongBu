@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app';
-// import Store from './store.js';
 import { BrowserRouter } from 'react-router-dom';
-// import { Provider } from 'react-redux';
 import { AuthErrorEventBus } from './context/authContext';
 import { AuthProvider } from './context/authContext';
 import SnsService from './service/snsService';
@@ -21,7 +19,7 @@ const httpClientFetch = new HttpClientFetch(baseURL);
 const authErrorEventBus = new AuthErrorEventBus();
 const authService = new AuthService(httpClientFetch, tokenStorage);
 const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
-const snsService = new SnsService(httpClient, tokenStorage, socketClient);
+const snsService = new SnsService(httpClientFetch, tokenStorage, socketClient);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -36,4 +34,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
