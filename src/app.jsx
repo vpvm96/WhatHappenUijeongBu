@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
+import './app.css';
+import { BrowserRouter as Route, Switch, useHistory } from 'react-router-dom';
+import Board from './components/board/board';
 import Navbar from './components/navbar/navbar';
 import AllSns from './components/sns/allSns';
 import MySns from './components/sns/mySns';

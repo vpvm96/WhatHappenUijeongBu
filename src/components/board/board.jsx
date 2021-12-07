@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './board.module.css';
+import axios from "axios";
 
 const Board = () => {
   return (
