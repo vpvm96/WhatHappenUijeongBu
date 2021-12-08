@@ -5,6 +5,9 @@ import Board from './components/board/board';
 import Navbar from './components/navbar/navbar';
 import AllSns from './components/sns/allSns';
 import MySns from './components/sns/mySns';
+import Login from './components/login/login';
+import PrivateRoute from './router/privateRoute';
+import PublicRoute from './router/publicRoute';
 import { useAuth } from './context/authContext';
 
 function App({ snsService, boardService }) {
@@ -28,27 +31,27 @@ function App({ snsService, boardService }) {
 
   return (
     <div className="App">
-      <Navbar
-        username={user.username}
-        onLogout={onLogout}
-        onAllSns={onAllSns}
-        onMySns={onMySns}
-      />
-      <Switch>
-        (
-          <>
-            <Route exact path='/'>
-              <AllSns snsService={snsService} />
+        <Switch>
+            <Route>
+              <PrivateRoute path='/'>
+                <Navbar
+                  username={user.username}
+                  onLogout={onLogout}
+                  onAllSns={onAllSns}
+                  onMySns={onMySns}
+                />
+              </PrivateRoute> 
+              <PrivateRoute exact path='/:username'>
+                <MySns snsService={snsService} />
+              </PrivateRoute>
+              <PrivateRoute exact path='/board'>
+                <Board boardService={boardService} />
+              </PrivateRoute>
+              <PublicRoute Restircted={true} exact path='/' component={Login}>
+                <AllSns snsService={snsService} />
+              </PublicRoute>
             </Route>
-            <Route exact path='/:username'>
-              <MySns snsService={snsService} />
-            </Route>
-            <Route exact path='/board'>
-              <Board boardService={boardService} />
-            </Route>
-          </>
-        )
-      </Switch>
+        </Switch>
     </div>  
   );
 }

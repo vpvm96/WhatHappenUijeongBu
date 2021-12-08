@@ -17,7 +17,7 @@ export default class SnsService {
       return this.http.fetch(`/sns`, {
         method: 'POST',
         headers: this.getHeaders(),
-        body: JSON.stringify({ text, username: 'foxmon', name: 'foxmon' }),
+        body: JSON.stringify({ text, username: 'tester', name: 'Tester' }),
       });
     }
   

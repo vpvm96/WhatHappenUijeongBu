@@ -3,11 +3,11 @@ import styles from './board.module.css';
 
 const Board = ({ boardService }) => {
   const [items, setItems] = useState([]);
-  // useEffect(() => {
-  //   boardService.getBoards().then(item => setItems(item.data));
-  // }, []);
+  useEffect(() => {
+    boardService.getBoards().then(items => setItems(items.data));
+  }, []);
   const onClickHandler = () => {
-    boardService.getBoards().then(item => setItems(item.data));
+    boardService.getBoards().then(items => setItems(items.data));
     console.log(items);
   }
   return (
@@ -16,7 +16,6 @@ const Board = ({ boardService }) => {
         <table className={styles.board_list}>
           <colgroup>
               <col width="5%" />
-              <col width="*" /> 
               <col width="50%" />
               <col width="*" />
               <col width="*" />
@@ -35,10 +34,9 @@ const Board = ({ boardService }) => {
           </thead>  
           <tbody>
             <tr>
-              <td>{items[0].id}</td>
-              <td>{items[0].title}</td>
-              <td>Test</td>
-              <td>{items[0].createdAt}</td>
+              <td>{items.id}</td>
+              <td>{items.title}</td>
+              <td>{items.createdAt}</td>
               <td>g</td>
               <td>h</td>
               <td>h</td>

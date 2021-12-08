@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styles from './navbar.module.css'
 import { FcAdvertising, FcNeutralDecision, FcMenu } from "react-icons/fc";
 import { Link } from 'react-router-dom';
