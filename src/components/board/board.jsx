@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import styles from './board.module.css';
 
 const Board = ({ boardService }) => {
+  const history = useHistory();
   const [items, setItems] = useState([]);
-  useEffect(() => {
-    boardService.getBoards().then(items => setItems(items.data));
-  }, []);
+
+  useEffect(()=>{
+    boardService.getBoards()
+    .then((items) => setItems(...items.data))
+    .catch((error) => console.log(error));
+  },[]);
+
   const onClickHandler = () => {
-    boardService.getBoards().then(items => setItems(items.data));
-    console.log(items);
+    history.push('/editorBoard')
   }
   return (
     <div className={styles.container}>
@@ -36,15 +41,19 @@ const Board = ({ boardService }) => {
             <tr>
               <td>{items.id}</td>
               <td>{items.title}</td>
-              <td>{items.createdAt}</td>
               <td>g</td>
+              <td>{items.createdAt}</td>
               <td>h</td>
               <td>h</td>
             </tr>
           </tbody>
         </table>
+        <button 
+          className={styles.postButton}
+          onClick={onClickHandler}
+          >글작성
+        </button>
       </div>
-      <button onClick={onClickHandler}>데이터 확인</button>
     </div>
   )
 }

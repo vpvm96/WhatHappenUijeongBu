@@ -13,3 +13,20 @@
 .board_list thead {
   background-color :rgb(233,236,239);
 }
+
+.postButton {
+  position: absolute;
+  right: 12.5rem;
+  top: 16rem;
+  width: 6rem;
+  height: 2.5rem;
+  border: 5px;
+  font-weight: bold;
+  border: 1px solid
+}
+
+.postButton:hover {
+  cursor : pointer;
+  transition: 1.2s;
+  transform: scale(1.005);
+}

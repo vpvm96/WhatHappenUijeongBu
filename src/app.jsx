@@ -6,6 +6,7 @@ import Navbar from './components/navbar/navbar';
 import AllSns from './components/sns/allSns';
 import MySns from './components/sns/mySns';
 import Login from './components/login/login';
+import EditorBoard from './components/board/editorBoard';
 import PrivateRoute from './router/privateRoute';
 import PublicRoute from './router/publicRoute';
 import { useAuth } from './context/authContext';
@@ -46,6 +47,9 @@ function App({ snsService, boardService }) {
               </PrivateRoute>
               <PrivateRoute exact path='/board'>
                 <Board boardService={boardService} />
+              </PrivateRoute>
+              <PrivateRoute exact path='/editorBoard'>
+                <EditorBoard/>
               </PrivateRoute>
               <PublicRoute Restircted={true} exact path='/' component={Login}>
                 <AllSns snsService={snsService} />
