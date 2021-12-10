@@ -49,7 +49,7 @@ function App({ snsService, boardService }) {
                 <Board boardService={boardService} />
               </PrivateRoute>
               <PrivateRoute exact path='/editorBoard'>
-                <EditorBoard/>
+                <EditorBoard boardService={boardService} user={user} />
               </PrivateRoute>
               <PublicRoute Restircted={true} exact path='/' component={Login}>
                 <AllSns snsService={snsService} />

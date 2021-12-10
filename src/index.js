@@ -15,13 +15,13 @@ import BoardService from './service/boardService';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const tokenStorage = new TokenStorage();
-const httpClient = new HttpClient(baseURL);
+const httpClient = new HttpClient(baseURL, tokenStorage);
 const httpClientFetch = new HttpClientFetch(baseURL);
 const authErrorEventBus = new AuthErrorEventBus();
 const authService = new AuthService(httpClientFetch, tokenStorage);
 const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
 const snsService = new SnsService(httpClientFetch, tokenStorage, socketClient);
-const boardService = new BoardService(httpClient, baseURL, () => tokenStorage.getToken());
+const boardService = new BoardService(httpClient, baseURL, tokenStorage);
 
 ReactDOM.render(
   <React.StrictMode>

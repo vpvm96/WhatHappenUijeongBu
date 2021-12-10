@@ -8,7 +8,6 @@ import {
   useMemo,
   useState,
 } from 'react';
-import Navbar from '../components/navbar/navbar';
 import Login from '../components/login/login';
 
 const AuthContext = createContext({});
@@ -66,7 +65,6 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
         children
       ) : (
         <div className='app'>
-          {/* <Navbar /> */}
           <Login onSignUp={signUp} onLogin={logIn} />
         </div>
       )}

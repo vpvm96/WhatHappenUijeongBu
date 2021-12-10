@@ -3,7 +3,7 @@ import styles from './quillEditor.module.css';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const QuillEditor = memo(({ quillRef, api, htmlContent, setHtmlContent })=>{
+const QuillEditor = memo(({ quillRef, boardService, htmlContent, setHtmlContent })=>{
   const imageHandler = useCallback(()=>{
     const formData = new FormData();
 
@@ -17,7 +17,7 @@ const QuillEditor = memo(({ quillRef, api, htmlContent, setHtmlContent })=>{
       const file = input.files[0];
       formData.append('image', file);
 
-      const res = await api.uploadImage(formData);
+      const res = await boardService.uploadImage(formData);
       if (!res.success) {
         alert('이미지 업로드에 실패하였습니다.');
       }
@@ -31,7 +31,7 @@ const QuillEditor = memo(({ quillRef, api, htmlContent, setHtmlContent })=>{
         range,
         `<img sre=${url} alt="img" />`);
     }
-  }, [api, quillRef]);
+  }, [boardService, quillRef]);
 
   const modules = useMemo(
     () => ({

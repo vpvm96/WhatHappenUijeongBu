@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import styles from './editorBoard.module.css';
 import QuillEditor from './quillEditor';
 
-const EditorBoard = memo(({ api, user }) => {
+const EditorBoard = memo(({ boardService, user }) => {
   const history = useHistory();
   const [htmlContent, setHtmlContent] = useState("");
   const { id: postId } = useParams();
@@ -16,25 +16,25 @@ const EditorBoard = memo(({ api, user }) => {
       return;
     }
     if (postId) {
-      await api.updatePost({postId, description, htmlContent});
-    }else {
-      await api.createNewPost({description,htmlContent});
+      await boardService.updatePost({postId, description, htmlContent});
+    } else {  
+      const data = await boardService.createBoard("My First Free Board", description);
     }
   }
   useEffect(()=>{
-    if(!postId){
+    if(!postId) {
       return;
     }
     const fetchData = async () => {
-      const { htmlContent: prevHtml } = await api.fetchPostDetail(postId);
+      const { htmlContent: prevHtml } = await boardService.fetchPostDetail(postId);
       setHtmlContent(prevHtml);
     };
     fetchData();
-  },[postId, api])
+  },[postId, boardService])
 
   return (
     <div>
-      <QuillEditor quillRef={quillRef} htmlContent={htmlContent} setHtmlContent={setHtmlContent} api={api} />
+      <QuillEditor quillRef={quillRef} htmlContent={htmlContent} setHtmlContent={setHtmlContent} boardService={boardService} />
       <button className={styles.submit} onClick={handleSubmit}>Done</button>
     </div>
   )

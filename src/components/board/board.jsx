@@ -7,14 +7,18 @@ const Board = ({ boardService }) => {
   const [items, setItems] = useState([]);
 
   useEffect(()=>{
+    // boardService.getBoards()
+    // .then((items) => setItems(...items.data))
+    // .catch((error) => console.log(error));
     boardService.getBoards()
-    .then((items) => setItems(...items.data))
-    .catch((error) => console.log(error));
-  },[]);
+      .then((items) => setItems(items, ...items.data))
+      .catch(e => console.log(e));
+  }, []);
 
   const onClickHandler = () => {
     history.push('/editorBoard')
   }
+  console.log(items.data[0]);
   return (
     <div className={styles.container}>
       <div style={{padding: "0 12px"}}>
@@ -39,12 +43,12 @@ const Board = ({ boardService }) => {
           </thead>  
           <tbody>
             <tr>
-              <td>{items.id}</td>
-              <td>{items.title}</td>
-              <td>g</td>
-              <td>{items.createdAt}</td>
-              <td>h</td>
-              <td>h</td>
+              <td>{items.data[0].id}</td>
+              <td>{items.data[0].title}</td>
+              <td>{items.data[0].content}</td>
+              <td>{items.data[0].createdAt}</td>
+              <td>1</td>
+              <td>1</td>
             </tr>
           </tbody>
         </table>

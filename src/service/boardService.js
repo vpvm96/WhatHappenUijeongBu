@@ -13,11 +13,10 @@ export default class BoardService {
       return this.httpClient.getAxios().post(this.base + `/free/${id}`);
     }
   
-    createBoard(title, content, createAt, updateAt) { // add content
-      return this.httpClient.getAxios().post(this.base + "/free", {
+    createBoard(title, content) { // add content
+      return this.httpClient.getAxios().post(this.base + "/free/create", {
         title,
         content,
-        headers: this.getHeader()
       });
     }
   
