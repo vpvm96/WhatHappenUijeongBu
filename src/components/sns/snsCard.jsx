@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import parseDate from '../../util/parseDate';
 import EditSnsForm from './editSnsForm';
+import styles from './snsCard.module.css'
 
 const SnsCard = memo(
   ({ sns, owner, onDelete, onUpdate, onUsernameClick }) => {
@@ -11,6 +12,7 @@ const SnsCard = memo(
     return (
       <li className='tweet'>
         <section className='tweet-container'>
+        {/* <section className={styles.tweet-container}> */}
           <div className='tweet-body'>
             <span className='tweet-name'>{name}</span>
             <span
